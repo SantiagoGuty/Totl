@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Top of the List Bibliography Software</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .file-container {
+  border: 5px solid;
+  /*margin-left: 160px; /* Same as the width of the sidenav. this should be variablized?? */
+  font-size: 28px; /* Increased text to enable scrolling */ /*should be variablized*/
+  padding: 0px 10px;
+  width: 100%;
+  text-align: center;
+}
+.file-container h4 {
+  color: white !important;
+  margin-top: 50px;
+  text-align: center;
+}
+.sidebar {
+  color: white;
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidebar ul {
+  display: block;
+}
+body {
+margin-left: 160px; /* Same as the width of the sidenav. this should be variablized?? */
+
+font: 400 15px Lato, sans-serif;
+line-height: 1.8;
+color: #818181;
+}
+h2 {
+font-size: 24px;
+text-transform: uppercase;
+color: #303030;
+font-weight: 600;
+margin-bottom: 30px;
+}
+h4 {
+font-size: 19px;
+line-height: 1.375em;
+color: #303030;
+font-weight: 400;
+margin-bottom: 30px;
+}  
+.jumbotron {
+background-color: #1ed959;
+color: #fff;
+padding: 100px 25px;
+font-family: Montserrat, sans-serif;
+}
+.container-fluid {
+padding: 60px 50px;
+}
+.bg-grey {
+background-color: #f6f6f6;
+}
+.logo {
+color: #1ed959;
+font-size: 200px;
+}
+.thumbnail {
+padding: 0 0 15px 0;
+border: none;
+border-radius: 0;
+}
+.thumbnail img {
+width: 100%;
+height: 100%;
+margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+background-image: none;
+color: #1ed959;
+}
+.carousel-indicators li {
+border-color: #1ed959;
+}
+.carousel-indicators li.active {
+background-color: #1ed959;
+}
+.item h4 {
+font-size: 19px;
+line-height: 1.375em;
+font-weight: 400;
+font-style: italic;
+margin: 70px 0;
+}
+.item span {
+font-style: normal;
+}
+.panel {
+border: 1px solid #1ed959; 
+border-radius:0 !important;
+transition: box-shadow 0.5s;
+}
+.panel:hover {
+box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+.panel-footer .btn:hover {
+border: 1px solid #3256a8;
+background-color: #fff !important;
+color: #1ed959;
+}
+.panel-heading {
+color: #fff !important;
+background-color: #1ed959 !important;
+padding: 25px;
+border-bottom: 1px solid transparent;
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+.panel-footer {
+background-color: white !important;
+}
+.panel-footer h3 {
+font-size: 32px;
+}
+.panel-footer h4 {
+color: #aaa;
+font-size: 14px;
+}
+.panel-footer .btn {
+margin: 15px 0;
+background-color: #3256a8;
+color: #fff;
+}
+.navbar {
+margin-bottom: 10;
+background-color: #45634e;
+z-index: 9999;
+border: 0;
+font-size: 12px !important;
+line-height: 1.42857143 !important;
+letter-spacing: 4px;
+border-radius: 0;
+font-family: Montserrat, sans-serif;
+}
+.navbar li a, .navbar .navbar-brand {
+color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+color: #1ed959 !important;
+background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+border-color: transparent;
+color: #fff !important;
+}
+footer .glyphicon {
+font-size: 20px;
+margin-bottom: 20px;
+color: #1ed959;
+}
+.slideanim {visibility:hidden;}
+.slide {
+animation-name: slide;
+-webkit-animation-name: slide;
+animation-duration: 1s;
+-webkit-animation-duration: 1s;
+visibility: visible;
+}
+@keyframes slide {
+0% {
+opacity: 0;
+transform: translateY(70%);
+} 
+100% {
+opacity: 1;
+transform: translateY(0%);
+}
+}
+@-webkit-keyframes slide {
+0% {
+opacity: 0;
+-webkit-transform: translateY(70%);
+} 
+100% {
+opacity: 1;
+-webkit-transform: translateY(0%);
+}
+}
+@media screen and (max-width: 768px) {
+.col-sm-4 {
+text-align: center;
+margin: 25px 0;
+}
+.btn-lg {
+width: 100%;
+margin-bottom: 35px;
+}
+}
+@media screen and (max-width: 480px) {
+.logo {
+font-size: 150px;
+}
+}
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <br>
+                <h4 style="color: white;">Sidebar</h4>
+                <li>Open</li>
+                <li>Upload</li>
+                <li>Save</li>
+                <li>Create Citation</li>
+            </ul>
+        </div>
+    </div>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Top of the List</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#file">FILE</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <!--<li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>-->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>BeanPro Inc.</h1> 
+  <p>Providing sub-par products for prices way too high!</p> 
+  <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- Where the file will be displayed-->
+<div id="file" class="container-fluid"> 
+    <div class="row">
+            <div class="file-container">
+                <h2>File</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, ex faucibus semper bibendum, lacus urna vulputate enim, sed porttitor libero tellus ut mauris. Integer ultrices viverra mollis. Morbi a mi sit amet sem vulputate venenatis. Nulla ullamcorper vestibulum ante, sit amet bibendum justo lobortis non. Vestibulum ultrices vitae dolor efficitur hendrerit. Maecenas sit amet lacus maximus, luctus lectus sed, commodo ipsum. Integer sit amet risus nisi. Donec vitae erat interdum, accumsan augue at, bibendum ipsum. Proin blandit enim ac ipsum interdum dapibus. Nulla eleifend urna eget lobortis sodales.
+
+                    Nullam egestas neque id leo tincidunt, at porttitor ante sagittis. In eu ligula lectus. Ut luctus, dolor at lobortis placerat, turpis massa eleifend leo, eget volutpat nulla quam quis elit. In luctus feugiat ornare. Fusce sollicitudin tortor et orci iaculis sagittis. Donec blandit, lacus sit amet lacinia suscipit, dui felis molestie lacus, in eleifend ex nunc vestibulum magna. Ut vitae maximus purus.
+                    
+                    Nunc sit amet felis placerat, molestie justo in, finibus nibh. Donec vel metus commodo, porta metus non, posuere nulla. Etiam vulputate sollicitudin luctus. Quisque condimentum risus eget tincidunt porttitor. Curabitur ac sem vel sem cursus blandit eu sit amet nulla. Ut ultricies non leo et pellentesque. Aenean vel convallis mauris. Suspendisse efficitur tellus lacus. Integer varius sit amet elit viverra posuere. Nullam commodo mauris ante, quis sagittis ex tempus eget. Nullam venenatis quam lectus, sit amet fermentum nibh interdum et. Phasellus sed malesuada lacus, eu aliquet lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla lorem nibh, blandit id varius nec, interdum eget libero. Sed vel mollis nisi.
+                    
+                    Etiam et est vel lacus semper egestas. Cras sodales id felis sit amet fringilla. Phasellus congue in ipsum lacinia bibendum. Quisque ipsum neque, rutrum quis quam dapibus, ornare sodales tellus. Nulla facilisi. Proin lacus mi, eleifend ac eleifend quis, suscipit porta nisi. Fusce posuere enim vel mollis commodo. Donec sed libero pulvinar, dapibus metus in, posuere ipsum. Quisque sit amet purus sed nulla auctor sodales. Proin id dui tristique, vestibulum lorem sit amet, rhoncus augue. Sed elementum lacus nec metus ornare, nec molestie nibh venenatis. Nam nunc arcu, mollis id varius id, accumsan vel quam. Praesent lobortis arcu at enim sollicitudin efficitur.
+                    
+                    Duis vitae mauris eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam non ante tortor. Sed pharetra varius nisi, quis maximus erat accumsan non. Nunc laoreet massa id dolor fermentum gravida. Etiam ac eros a sapien molestie vulputate. Vivamus semper erat eget nisi aliquet elementum. Quisque ultrices lobortis arcu, in maximus risus. Praesent urna dui, efficitur sed convallis id, aliquam blandit sapien. Duis velit nulla, mattis eget lorem ut, semper vehicula dolor. Fusce convallis sem lectus, non varius ligula consectetur quis. Morbi fermentum in diam venenatis posuere.
+                    
+                    Generated 5 paragraphs, 459 words, 3074 bytes of Lorem Ipsum</p>
+            </div>
+    </div>
+</div>
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Top of the List:</h2><br>
+      <h4>A software for making bibliographies.</h4><br>
+      <p>Think of applications like Zotero or such.</p>
+      <br>
+    </div>
+  </div>
+</div>
+
+
+  <h2 style="text-align: center;">What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"This company is the best. I am so happy with the result!"<br><br><br><span>Nick Bean</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word ... A!!"<br><br><br><span>Nicholas Rosasco</span></h4>
+      </div>
+      <div class="item">
+        <h1>"&#128016;"</h1><span><h4>Michael Glass</h4></span>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+
+<div style="background-color: #009900;">
+    <footer class="bg-body text-center">
+      <br>
+      <h1 id="jumbotron" style="color: white;"><b>Contact us!</b></h1>
+      
+      <p style="color: aliceblue;">We are the largest contributor to mail spam on Valpo! </p>
+  
+      <span class="glyphicon glyphicon-phone-alt" style="color: aliceblue;"></span>
+      
+    
+  
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  
+        <!-- Section: Social media container p-4 pb-0 -->
+        <section class="mb-4 text-white" >
+  
+          <!-- Github -->
+          <a
+            style="color: white;"
+            style="background-color: #333333;"
+            data-mdb-ripple-init
+            class="btn btn-floating m-1"
+            href="https://github.com/SantiagoGuty/Totl"
+            role="button"
+          ><i class="fab fa-github"></i> GitHub
+          </a>
+        </section>
+  
+      </div>
+      
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.4);">
+        <span class="text-white" style="color: white;">@Totl2024</span>
+      </div>
+      <!-- Copyright -->
+     
+    </footer>
+  </div>
+
+</body>
+</html>
