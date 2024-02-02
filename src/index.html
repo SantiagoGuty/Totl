@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Top of the List Bibliography Software</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -170,6 +170,24 @@ font-size: 20px;
 margin-bottom: 20px;
 color: #1ed959;
 }
+.readFileBtn{
+  background-color: #1ed95980 !important; 
+  font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+  border-color:  #1ed959;
+  padding: 1%;
+  color: aliceblue;
+}
+
+.centered-container {
+    text-align: center;
+    background-color: #1ed959; /* Background color for the div */
+    padding: 20px; /* Add padding for better visual appearance */
+}
+
+#fileContent {
+    color: aliceblue;
+}
+
 .slideanim {visibility:hidden;}
 .slide {
 animation-name: slide;
@@ -243,7 +261,9 @@ font-size: 150px;
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#file">FILE</a></li>
+        <li><a href="#cite">CITE</a></li>
         <li><a href="#about">ABOUT</a></li>
+        <li><a href="#footer">CONTACT US</a></li>
         <!--<li><a href="#services">SERVICES</a></li>
         <li><a href="#portfolio">PORTFOLIO</a></li>-->
       </ul>
@@ -258,11 +278,14 @@ font-size: 150px;
     <div class="input-group">
       <input type="email" class="form-control" size="50" placeholder="Email Address" required>
       <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
+        <button type="button" class="btn btn-danger" style="background-color: #009900; border-color: aliceblue;">Subscribe</button>
       </div>
     </div>
   </form>
 </div>
+
+
+
 <!-- Where the file will be displayed-->
 <div id="file" class="container-fluid"> 
     <div class="row">
@@ -270,18 +293,23 @@ font-size: 150px;
                 <h2>File</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, ex faucibus semper bibendum, lacus urna vulputate enim, sed porttitor libero tellus ut mauris. Integer ultrices viverra mollis. Morbi a mi sit amet sem vulputate venenatis. Nulla ullamcorper vestibulum ante, sit amet bibendum justo lobortis non. Vestibulum ultrices vitae dolor efficitur hendrerit. Maecenas sit amet lacus maximus, luctus lectus sed, commodo ipsum. Integer sit amet risus nisi. Donec vitae erat interdum, accumsan augue at, bibendum ipsum. Proin blandit enim ac ipsum interdum dapibus. Nulla eleifend urna eget lobortis sodales.
 
-                    Nullam egestas neque id leo tincidunt, at porttitor ante sagittis. In eu ligula lectus. Ut luctus, dolor at lobortis placerat, turpis massa eleifend leo, eget volutpat nulla quam quis elit. In luctus feugiat ornare. Fusce sollicitudin tortor et orci iaculis sagittis. Donec blandit, lacus sit amet lacinia suscipit, dui felis molestie lacus, in eleifend ex nunc vestibulum magna. Ut vitae maximus purus.
-                    
-                    Nunc sit amet felis placerat, molestie justo in, finibus nibh. Donec vel metus commodo, porta metus non, posuere nulla. Etiam vulputate sollicitudin luctus. Quisque condimentum risus eget tincidunt porttitor. Curabitur ac sem vel sem cursus blandit eu sit amet nulla. Ut ultricies non leo et pellentesque. Aenean vel convallis mauris. Suspendisse efficitur tellus lacus. Integer varius sit amet elit viverra posuere. Nullam commodo mauris ante, quis sagittis ex tempus eget. Nullam venenatis quam lectus, sit amet fermentum nibh interdum et. Phasellus sed malesuada lacus, eu aliquet lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla lorem nibh, blandit id varius nec, interdum eget libero. Sed vel mollis nisi.
-                    
-                    Etiam et est vel lacus semper egestas. Cras sodales id felis sit amet fringilla. Phasellus congue in ipsum lacinia bibendum. Quisque ipsum neque, rutrum quis quam dapibus, ornare sodales tellus. Nulla facilisi. Proin lacus mi, eleifend ac eleifend quis, suscipit porta nisi. Fusce posuere enim vel mollis commodo. Donec sed libero pulvinar, dapibus metus in, posuere ipsum. Quisque sit amet purus sed nulla auctor sodales. Proin id dui tristique, vestibulum lorem sit amet, rhoncus augue. Sed elementum lacus nec metus ornare, nec molestie nibh venenatis. Nam nunc arcu, mollis id varius id, accumsan vel quam. Praesent lobortis arcu at enim sollicitudin efficitur.
-                    
-                    Duis vitae mauris eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam non ante tortor. Sed pharetra varius nisi, quis maximus erat accumsan non. Nunc laoreet massa id dolor fermentum gravida. Etiam ac eros a sapien molestie vulputate. Vivamus semper erat eget nisi aliquet elementum. Quisque ultrices lobortis arcu, in maximus risus. Praesent urna dui, efficitur sed convallis id, aliquam blandit sapien. Duis velit nulla, mattis eget lorem ut, semper vehicula dolor. Fusce convallis sem lectus, non varius ligula consectetur quis. Morbi fermentum in diam venenatis posuere.
+                    Nullam egestas neque id leo tincidunt, a Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam non ante tortor. Sed pharetra varius nisi, quis maximus erat accumsan non. Nunc laoreet massa id dolor fermentum gravida. Etiam ac eros a sapien molestie vulputate. Vivamus semper erat eget nisi aliquet elementum. Quisque ultrices lobortis arcu, in maximus risus. Praesent urna dui, efficitur sed convallis id, aliquam blandit sapien. Duis velit nulla, mattis eget lorem ut, semper vehicula dolor. Fusce convallis sem lectus, non varius ligula consectetur quis. Morbi fermentum in diam venenatis posuere.
                     
                     Generated 5 paragraphs, 459 words, 3074 bytes of Lorem Ipsum</p>
             </div>
     </div>
 </div>
+
+
+
+<div id="cite" style="background-color: #1ed959; padding: 20px; text-align: center;">
+  <br><br>
+  <button style="display: block; margin: 0 auto; background-color: #0f542580 !important;" id="readFileBtn" class="readFileBtn" ><p>Read and show txt file</p></button>
+  <h2 id="fileContent" style="text-align: left;">._.</h2>
+</div>
+
+<script src="read_and_show.js"></script> <!-- Javascript file that reads the TXT file -->
+
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
@@ -293,6 +321,7 @@ font-size: 150px;
     </div>
   </div>
 </div>
+
 
 
   <h2 style="text-align: center;">What our customers say</h2>
@@ -316,6 +345,7 @@ font-size: 150px;
         <h1>"&#128016;"</h1><span><h4>Michael Glass</h4></span>
       </div>
     </div>
+  
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -367,7 +397,7 @@ $(document).ready(function(){
 </script>
 
 
-<div style="background-color: #009900;">
+<div id="footer" style="background-color: #009900;">
     <footer class="bg-body text-center">
       <br>
       <h1 id="jumbotron" style="color: white;"><b>Contact us!</b></h1>
