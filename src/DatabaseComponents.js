@@ -158,17 +158,15 @@ export default App;
 const { Pool } = require('pg').Pool;         
 
 const pool = new Pool({
-   // user:         // username
-   // host:           // connection to database
-   // database:       // name of database on our server
-   // password:       // password for database on our server
-   // port:           //establish the port.
+   user: 'totl',
+   host: '127.0.0.1',
+   database: 'totl',      // this in THEORY should work as connection to the database. 
+   password: 'g0valp0',
+   port: '5432', 
 });
 
 // Those credentials should ***ACTUALLY*** go into a ___.env file, included in the .gitignore folder.
 // That is for security and safety of the information, as well as standard industry proceedure. 
-
-// ------------------------------------------- //
 
 // Function to get all entries
 const getEntries = async() => {
