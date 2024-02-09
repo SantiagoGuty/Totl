@@ -1,0 +1,38 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.home-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.home-search-input {
+  border-radius: 20px;
+  padding: 15px; /* Increase padding for larger input size */
+  margin-right: 10px;
+  font-size: 20px; /* Increase font size */
+}
+
+.home-cite-button,
+.home-upload-button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px; /* Increase padding for larger button size */
+  cursor: pointer;
+  font-size: 20px; /* Increase font size */
+}
+
+.home-upload-button {
+  margin-top: 20px;
+}
