@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 import Navbar from './Navbar/Navbar';
+import Citations from './pages/Citations';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
+          <Route path="/citations" exact element={<Citations />} />
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
           <Route path="/contact" exact element={<Contact />} />
