@@ -4,6 +4,10 @@ export const MenuList = [
       url: "/",
     },
     {
+      title: "Citations",
+      url: "/citations",
+    },
+    {
       title: "About",
       url: "/about",
     },
@@ -11,9 +15,5 @@ export const MenuList = [
       title: "Contact",
       url: "/contact",
     },
-    {
-      title: "Citations",
-      url: "/citations",
-    }
   ];
   
