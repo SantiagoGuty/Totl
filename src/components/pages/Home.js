@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Citations } from "./links/Citations"; 
+import { FileContainer } from "./links/FileContainer"; 
 import "./Home.css";
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
                 <button className="home-cite-button">Cite</button>
             </div>
             <button className="home-upload-button" onClick={() => setShowCitations(true)}>Upload Manually</button>
-            {showCitations && <Citations onBack={handleBackFromCitations} />} {/* Pass the function to handle back action */}
+            {showCitations && <FileContainer onBack={handleBackFromCitations} />} {/* Pass the function to handle back action */}
         </div>
     );
 }
