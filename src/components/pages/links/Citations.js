@@ -28,6 +28,10 @@ export function Citations(props) {
         }); 
     }
 
+    function handleBack() {
+        props.onBack(); // Call the onBack function passed from the parent component
+    }
+
     return (
         <div className="file-popup">
             <h2 className="file-title">{fileTitle}</h2>
@@ -37,7 +41,10 @@ export function Citations(props) {
                 </pre>
             </div>
             <input onChange={handleChange} type="file"/>
-            <button onClick={handleFileSubmit} type="submit">Upload citation</button> 
+            <div>
+                <button onClick={handleFileSubmit} type="submit">Upload citation</button>
+                <button onClick={handleBack} className="back-button">Back</button> 
+            </div>
         </div>
     );
 }
