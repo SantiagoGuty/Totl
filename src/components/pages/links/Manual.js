@@ -1,80 +1,65 @@
 import React, { useState } from "react";
-//import axios from 'axios';
-import './Manual.css';
+import "./Manual.css"; // Import the CSS file for styling
 
-
-export default function Manual(props) {
-    /*let [fileTitle, setFileTitle] = useState("Untitled");
-    let [fileContent, setFileContent] = useState("There are no citations added. Please upload or create a citation.");
-    const [file, setFile] = useState()
-
-    function handleChange(e) {
-        setFile(e.target.files[0])
-    }
-
-    function handleFileSubmit(e) {
-        if (!file) { 
-            console.log("No file selected.");
-            return; 
-        }
-        
-        e.preventDefault()
-        const url = '';
-        const formData = new FormData();
-
-        formData.append('file', file);
-        axios.post(url, formData, {
-            'Content-Type': 'application/json',
-           },{
-            data: {username: '', password: ''}
-        }).then((response) => {
-            setFileTitle(response.data.file.name);
-            setFileContent(response.data.fileUrl);
-        }).catch(err => console.log(err)); 
- 
-    }
-*/
-    function handleBack() {
-        props.onBack(); // Call the onBack function passed from the parent component
-    }
+function Manual({ onBack }) {
     const [formData, setFormData] = useState({
-        style: "",
-        source: "",
+        style: "chicago",
+        source: "book",
         firstname: "",
         lastname: "",
         title: "",
         year: "",
         publisher: "",
         isbn: "",
-        url: "",
-      });
+        url: ""
+    });
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        // Add functionality to handle form submission here
+    }
+
+    function handleBack() {
+        onBack(); // Call the onBack function passed from props
+    }
 
     return (
-        <div className="manualreference-popup">
-            <h1>Create Your Citation</h1>
-            <form>
-                <div>
-                    <label className="dropdown-label">Citation Style: </label>
-                    <select className="citestyle-dropdown" name="style">
+        <div className="file-popup">
+            <h2>Create Your Citation</h2>
+            <br /> 
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label>Citation Style:  </label>
+                    <select className="form-control" name="style" onChange={(e) => setFormData({...formData, style: e.target.value})}>
                         <option value="chicago">Chicago</option>
+                        <option value="mla">MLA</option>
+                        <option value="apa">APA</option>
+                        <option value="turabian">Turabian</option>
+                        <option value="harvard">Harvard</option>
                     </select>
                 </div>
-                <div>
-                    <label className="dropdown-label">Source: </label>
-                    <select className="citesource-dropdown" name="source">
+                <div className="form-group">
+                    <label>Source:     </label>
+                    <select className="form-control" name="source" onChange={(e) => setFormData({...formData, source: e.target.value})}>
                         <option value="book">Book</option>
                         <option value="website">Website</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <div><label>Author's First Name: <input type="text" name="firstname" /></label></div>
-                <div><label>Author's Last Name: <input type="text" name="lastname" /></label></div>
-                <div><label>Title: <input type="text" name="title" /></label></div>
-                <div><label>Year: <input type="text" name="year" /></label></div>
-                <div><label>Publisher: <input type="text" name="publisher" /></label></div>
-                <div><label>ISBN: <input type="text" name="isbn" /></label></div>
-                <div><label>URL: <input type="text" name="url" /></label></div>
+                <div className="form-group"><label>Author's First Name: <input className="form-control" type="text" name="firstname" onChange={(e) => setFormData({...formData, firstname: e.target.value})} /></label></div>
+                <div className="form-group"><label>Author's Last Name: <input className="form-control" type="text" name="lastname" onChange={(e) => setFormData({...formData, lastname: e.target.value})} /></label></div>
+                <div className="form-group"><label>Title: <input className="form-control" type="text" name="title" onChange={(e) => setFormData({...formData, title: e.target.value})} /></label></div>
+                <div className="form-group"><label>Year: <input className="form-control" type="text" name="year" onChange={(e) => setFormData({...formData, year: e.target.value})} /></label></div>
+                <div className="form-group"><label>Publisher: <input className="form-control" type="text" name="publisher" onChange={(e) => setFormData({...formData, publisher: e.target.value})} /></label></div>
+                <div className="form-group"><label>ISBN: <input className="form-control" type="text" name="isbn" onChange={(e) => setFormData({...formData, isbn: e.target.value})} /></label></div>
+                <div className="form-group"><label>URL: <input className="form-control" type="text" name="url" onChange={(e) => setFormData({...formData, url: e.target.value})} /></label></div>
+                <div className="button-group">
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button className="back-button" onClick={handleBack}>Back</button>
+                </div>
             </form>
         </div>
     );
 }
+
+export default Manual;
