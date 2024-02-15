@@ -1,6 +1,0 @@
-@article{garcia1946casa,
-  title={La casa de Bernarda Alba},
-  author={Garc{\'\i}a Lorca, Federico},
-  journal={Al},
-  year={1946}
-}

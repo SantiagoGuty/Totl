@@ -1,0 +1,72 @@
+.file-popup {
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 5px solid;
+  padding: 20px;
+  z-index: 2; /* Ensure the popup is above the home page content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.input-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select.input-control {
+  width: calc(100% - 6px); /* Adjust width for select inputs */
+}
+
+.btn {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: tomato;
+}
+
+.btn-primary:hover {
+  background-color: red;
+}
+
+.back-button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 0; /* Remove margin-top */
+  margin-left: 10px; /* Add margin between buttons */
+}
+
+.back-button:hover {
+  background-color: red;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+  margin-top: 20px; /* Adjust as needed */
+}
